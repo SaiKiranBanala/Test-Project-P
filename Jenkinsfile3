@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'Vprofile-Tomcat-Dev'
+	                build job: 'tomcatDevDeployment'
 	            }
 	        }
 	
@@ -24,7 +24,7 @@ pipeline {
 	                    input message:'Approve PRODUCTION Deployment?'
 	                }
 	
-	                build job: 'Vprofile-Tomcat-QA'
+	                build job: 'tomcatQADeployment'
 	            }
 	            post {
 	                success {
